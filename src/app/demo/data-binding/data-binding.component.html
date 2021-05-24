@@ -1,0 +1,22 @@
+<div class="container main-container">
+    <p [ngClass]="{
+       'text-warning':clicks > 3,
+       'text-danger':clicks > 6 
+    }">data-biding works!</p>
+
+    <p>Número de cliques: {{ clicks }}</p>
+
+    <button class="btn btn-info" [disabled]='clicks >= 10' (click)="addClick()">Add Click</button>
+    <br>
+    <br>
+    <button class="btn btn-info" [disabled]='clicks < 10' (click)="resetClicks()">Reset Clicks</button>
+
+    <br>
+    <br>
+    <br>
+
+    <input class="input" placeholder="Digite seu nome" type="text" [ngModel]="name" (ngModelChange)="name = $event">
+    <br>
+    <br>
+    <p [ngClass]="name">Seu nome é: {{ name }}</p>
+</div>
